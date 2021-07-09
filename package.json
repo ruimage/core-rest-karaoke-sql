@@ -1,0 +1,32 @@
+{
+  "name": "core-rest-karaoke",
+  "version": "1.0.0",
+  "description": "## Общие сведения Перед выполнением данной задачи мы рассмотрим условные обозначения для типов запросов (например, GET и POST) и пути в соответствии с CRUD (например, `/dogs/:id/edit`).",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.4",
+    "mongoose": "^5.4.14",
+    "morgan": "^1.9.1",
+    "pg": "^8.6.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elbrus-Bootcamp/core-rest-karaoke.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elbrus-Bootcamp/core-rest-karaoke/issues"
+  },
+  "homepage": "https://github.com/Elbrus-Bootcamp/core-rest-karaoke#readme"
+}

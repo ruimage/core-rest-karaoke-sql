@@ -1,0 +1,26 @@
+<h1>Sign Up to Karaoke</h1>
+
+<main class="form-wrapper" role="main">
+
+  {{#if errors}}
+    <div class="errors-wrapper">
+      <span>Your entry could not be saved:</span>
+      <ul class="errors">
+        {{#each errors}}
+          <li class="error">{{this}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/if}}
+
+
+  <form method="post" action="create-new-post">
+    <label for="singer_name_input">Singer name:</label>
+    <input id="singer_name_input" name="entry[singer]" type="text" value="entry[singer]">
+
+    <label for="songTitle_input">Song title:</label>
+    <input id="songTitle_input" name="entry[songTitle]" type="text" value="entry[songTitle]">
+
+    <input type="submit" value="Put me on the List!" class="button">
+  </form>
+</main>
