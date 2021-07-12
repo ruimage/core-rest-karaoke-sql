@@ -15,7 +15,7 @@ router.get('/new-entry-form', async (req, res, next) => {
 
 
 router.post('/create-new-post', async (req, res, next) => {
-  const entry = new Entry.create(req.body.entry);
+  const entry = await Entry.create(req.body.entry);
   try {
     await entry.save();
     // throw Error('You shall not pass');
