@@ -12,7 +12,7 @@ module.exports = function NewEntry({ errors }) {
           <div className="errors-wrapper">
             <span>Your entry could not be saved:</span>
             <ul className="errors">
-              {errors.map((error) => <li className="error">{error}</li>)}
+              {errors.map((error) => <li className="error">{error.message}</li>)}
             </ul>
           </div>
         )}
