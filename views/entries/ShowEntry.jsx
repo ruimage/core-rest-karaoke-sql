@@ -10,11 +10,11 @@ module.exports = function Entries({ entry }) {
         <p>{entry.singer} signed up to sing {entry.songTitle}.</p>
 
         <p>
-          Entry submitted on {entry.createdAt}.
+          Entry submitted on {entry.createdAt.toTimeString()}.
 
           {entry.createdAt === entry.updatedAt && (
             <span>
-              Entry updated on {entry.updatedAt}.
+              Entry updated on {entry.updatedAt.toTimeString()}.
             </span>
           )}
         </p>
