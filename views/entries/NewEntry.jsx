@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 const React = require('react');
 const Layout = require('../Layout');
 
@@ -12,7 +13,9 @@ module.exports = function NewEntry({ errors }) {
           <div className="errors-wrapper">
             <span>Your entry could not be saved:</span>
             <ul className="errors">
-              {errors.map((error) => <li className="error">{error.message}</li>)}
+              {errors.map((error, index) => (
+                <li className="error" key={index}>{error.message}</li>
+              ))}
             </ul>
           </div>
         )}

@@ -6,6 +6,7 @@ module.exports = function Layout({ children }) {
     <html lang="en">
 
       <head>
+        <meta charSet="UTF-8" />
         <link rel="stylesheet" href="/css/normalize.css" />
         <link rel="stylesheet" href="/css/application.css" />
 

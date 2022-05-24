@@ -9,7 +9,7 @@ module.exports = function Entries({ entries }) {
       <main role="main">
         <ul className="entries">
           {entries.map((entry) => (
-            <li className="entry">
+            <li className="entry" key={entry.id}>
               <span className="singer">{entry.singer}</span>
               <span className="song-title">{entry.songTitle}</span>
               <ul className="entry-links">
