@@ -74,7 +74,9 @@ router.put('/entries/:id', async (req, res) => {
 router.delete('/entries/:id', async (req, res) => {
   try {
     const destr = await Entry.destroy({where: {id: req.params.id}});
-    if (destr>0) return res.send({success: true});
+    if (destr>0) {
+      return res.status(200).send({success: true});
+    }
     return res.send({success: false});
   } catch (e) {
     return res.send({success: false});

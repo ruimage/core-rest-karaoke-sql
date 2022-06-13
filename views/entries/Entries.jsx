@@ -15,7 +15,7 @@ module.exports = function Entries({ entries }) {
               <ul className="entry-links">
                 <li className="entry-link"><a href={`entries/${entry.id}`}>details</a></li>
                 <li className="entry-link"><a href={`entries/${entry.id}/edit`}>edit</a></li>
-                <li className="entry-link"><a href="">delete</a></li>
+                <li className="entry-link"><a href="" data-isdel={1} >delete</a></li>
               </ul>
             </li>
           ))}

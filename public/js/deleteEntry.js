@@ -1,12 +1,16 @@
 document.querySelector('#delete-action').addEventListener('click', async (event) => {
 
-  event.preventDefault();
 
-  const id = event.target.closest('.entry').dataset.id;
-  const response = await fetch(`/entries/${id}`, {
-    method: "DELETE"
-  });
-  const st = await response.json();
-  if (st.success) window.location.href = '/';
+  const entry = event.target.closest('.entry');
+  const isDelete = event.target.dataset.isdel;
+  const id = entry.dataset.id;
+  if (isDelete) {
+    event.preventDefault();
+    const response = await fetch(`/entries/${id}`, {
+      method: "DELETE"
+    });
+    const st = await response.json();
+    if (st.success) entry.remove();
+  }
 })
 
