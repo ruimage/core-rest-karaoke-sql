@@ -31,7 +31,7 @@ router.post('/create-new-post', async (req, res) => {
   try {
     await entry.save();
     // throw Error('You shall not pass');
-    res.redirect(`show-one-entry/${entry.id}`);
+    res.redirect(`entries/${entry.id}`);
   } catch (err) {
     const newEntry = React.createElement(NewEntry, { errors: [err] });
     const html = ReactDOMServer.renderToStaticMarkup(newEntry);
@@ -40,7 +40,7 @@ router.post('/create-new-post', async (req, res) => {
   }
 });
 
-router.get('/show-one-entry/:id', async (req, res) => {
+router.get('/entries/:id', async (req, res) => {
   const entry = await Entry.findOne({ where: { id: req.params.id } });
 
   const showEntry = React.createElement(ShowEntry, { entry });
@@ -49,7 +49,7 @@ router.get('/show-one-entry/:id', async (req, res) => {
   res.end(html);
 });
 
-router.get('/edit-one-entry-form/:id', async (req, res) => {
+router.get('/entries/:id/edit', async (req, res) => {
   const entry = await Entry.findOne({ where: { id: req.params.id } });
 
   const editEntry = React.createElement(EditEntry, { entry });
@@ -64,7 +64,7 @@ router.post('/update-entry/:id', async (req, res) => {
   entry.singer = singer;
   entry.songTitle = songTitle;
   entry.save();
-  return res.redirect(`/show-one-entry/${entry.id}`);
+  return res.redirect(`/entries/${entry.id}`);
 });
 
 router.get('/delete-entry/:id', async (req, res) => {
