@@ -58,13 +58,17 @@ router.get('/entries/:id/edit', async (req, res) => {
   res.end(html);
 });
 
-router.post('/update-entry/:id', async (req, res) => {
-  const entry = await Entry.findOne({ where: { id: req.params.id } });
-  const { singer, songTitle } = req.body.entry;
-  entry.singer = singer;
-  entry.songTitle = songTitle;
-  entry.save();
-  return res.redirect(`/entries/${entry.id}`);
+router.put('/entries/:id', async (req, res) => {
+  try {
+    const entry = await Entry.findOne({ where: { id: req.params.id } });
+    const { singer, songTitle } = req.body;
+    entry.singer = singer;
+    entry.songTitle = songTitle;
+    entry.save();
+    return res.send({success:true});
+  }catch (e){
+    return res.send({success:false});
+  }
 });
 
 router.get('/delete-entry/:id', async (req, res) => {

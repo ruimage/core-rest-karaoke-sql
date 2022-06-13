@@ -11,7 +11,7 @@ module.exports = function Layout({ children }) {
         <link rel="stylesheet" href="/css/application.css" />
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" />
-        <script src="/js/application.js" />
+
         <title>Karaoke</title>
       </head>
 
@@ -28,6 +28,7 @@ module.exports = function Layout({ children }) {
             <span className="legal">Important Legal Information</span>
           </footer>
         </div>
+        <script src="/js/application.js" />
       </body>
 
     </html>
