@@ -10,7 +10,7 @@ const { Entry } = require('../db/models');
 
 const router = express.Router();
 
-router.get('/all-the-entries', async (req, res) => {
+router.get('/entries', async (req, res) => {
   const entries = await Entry.findAll();
 
   const entriesView = React.createElement(Entries, { entries });
@@ -69,7 +69,7 @@ router.post('/update-entry/:id', async (req, res) => {
 
 router.get('/delete-entry/:id', async (req, res) => {
   await Entry.destroy({ where: { id: req.params.id } });
-  return res.redirect('/all-the-entries');
+  return res.redirect('/entries');
 });
 
 module.exports = router;
