@@ -28,7 +28,7 @@ module.exports = function Layout({ children }) {
             <span className="legal">Important Legal Information</span>
           </footer>
         </div>
-        <script src="/js/application.js" />
+
       </body>
 
     </html>

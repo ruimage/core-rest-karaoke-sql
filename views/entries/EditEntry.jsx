@@ -17,6 +17,7 @@ module.exports = function EditEntry({ entry }) {
           <input type="submit" value="Update Entry" className="button" />
         </form>
       </main>
+      <script src="/js/editEntryCl.js" />
     </Layout>
   );
 };

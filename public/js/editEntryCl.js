@@ -18,3 +18,6 @@ document.querySelector('#edit-entry-form').addEventListener('submit',async (evt)
   if (st.success) window.location.href = '/';
 
 })
+
+
+
